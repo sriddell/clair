@@ -36,7 +36,7 @@ import (
 )
 
 const (
-	trackerGitURL = "https://git.launchpad.net/ubuntu-cve-tracker"
+	trackerGitURL = "https://git.ellucian.com/scm/~sriddell/ubuntu-cve-tracker.git"
 	updaterFlag   = "ubuntuUpdater"
 	cveURL        = "http://people.ubuntu.com/~ubuntu-security/cve/%s"
 )
@@ -314,10 +314,10 @@ func parseUbuntuCVE(fileContent io.Reader) (vulnerability database.Vulnerability
 
 				if md["status"] == "released" {
 					if md["note"] != "" {
-						if strings.Contains(md["note"], ",")  { //contains a comma
+						if strings.Contains(md["note"], ",") { //contains a comma
 							var tmp_strings []string
 							tmp_strings = strings.Split(md["note"], ",")
-							for _,s := range tmp_strings {
+							for _, s := range tmp_strings {
 								var err error
 								err = versionfmt.Valid(dpkg.ParserName, s)
 								if err != nil {

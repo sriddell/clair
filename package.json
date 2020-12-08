@@ -1,0 +1,5 @@
+{
+  "name": "clair",
+  "dockerNamespace": "cloudops",
+  "version": "2.1.6"
+}
