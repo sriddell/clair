@@ -6,6 +6,6 @@ library identifier: 'dockerBuilder@PROD', retriever: modernSCM(
 node('ec2-worker-u18-medium') {
     stage('bootstrap') {
         cleanWs()
-        dockerBuilder([restrictReleasesToMaster: true, publish: true, runUnitTests: false])
+        dockerBuilder([restrictReleasesToMaster: false, publish: true, runUnitTests: false])
     }
 }
